@@ -1,6 +1,9 @@
+import {MouseEventHandler} from 'react';
+
 export default interface Props{
     title: string,
     description: string,
     price: number,
-    img: string
+    img: string,
+    OnClick?: () => void
 } 

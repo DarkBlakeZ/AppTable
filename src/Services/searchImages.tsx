@@ -1,4 +1,4 @@
-import { createClient, ErrorResponse, Photo, Photos } from 'pexels';
+import { Photo } from 'pexels';
 
 import axios, { AxiosResponse } from "axios";
 

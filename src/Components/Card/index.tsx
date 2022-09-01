@@ -17,6 +17,7 @@ export default function CardComponent({
   description = "Sin descripcion",
   price = 0,
   img = "",
+  OnClick = () => {console.log("no pasaron function")}
 }: Props) {
   const [open, setOpen] = useState(false);
 
@@ -47,7 +48,7 @@ export default function CardComponent({
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Agregar al carrito</Button>
+          <Button size="small" onClick={OnClick}>Agregar al carrito</Button>
         </CardActions>
       </Card>
 

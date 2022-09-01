@@ -3,6 +3,9 @@ import Card from "../../Components/Card";
 import { searchImages } from "../../Services/searchImages";
 import { useEffect, useState } from "react";
 import { Photo } from "pexels";
+//import {Swal2} from "../../Components/Swal2"; 
+import {Toast} from '../../Functions/Toast'
+import Header from "../../Components/Header";
 
 export default function Home() {
 
@@ -14,6 +17,12 @@ export default function Home() {
     setPhotos(images);
   }
 
+  const AddCar = (id:number) => {
+    console.log("Voy a agregar al carrito");
+    //Swal2({title:"Carrito", message:"Producto añadido al carrito", icon:"success"});
+    Toast({type:"success", message:`Agregado en carrito! ${id}`});
+  }
+
   useEffect(()=>{
 
     getData();
@@ -22,6 +31,7 @@ export default function Home() {
 
   return (
     <>
+      <Header />
       <h1>Menu</h1>
 
       {
@@ -35,6 +45,7 @@ export default function Home() {
               description={item.photographer_url}
               price={item.id}
               img={item.src.original}
+              OnClick={() => AddCar(item.id)}
             />
         ))
       }
